@@ -8,8 +8,13 @@ body {
     background: $bg-color;
     color: $primary-color;
     font-family: 'Montserrat', sans-serif;
-    min-height: 100vh;
     padding: 150px 180px;
+}
+
+main {
+    max-height: 1024px;
+    max-width: 1440px;
+    margin: auto;
 }
 
 h2,h3,p {
@@ -71,57 +76,60 @@ li {
     &:first-child::before {
         height: 0;
     }
-}
 
-li .line {
-    &::after {
-       z-index: 1;
-       content:"";
-       position: absolute;
-       height: 32px;
-       width: 32px;
-       border-radius: 50%;
-       background: $primary-color;
-       right: 2px;
-       top: 2px;
-       opacity: 0;
-    }
+    .line {
+        &::after {
+           z-index: 1;
+           content:"";
+           position: absolute;
+           height: 32px;
+           width: 32px;
+           border-radius: 50%;
+           background: $primary-color;
+           right: 2px;
+           top: 2px;
+           opacity: 0;
+           transition: opacity;
+           transition-delay: 100ms;
+        }
+    
+        &::before {
+           z-index: 1;
+           content: "";
+           position: absolute;
+           height: 2px;
+           width: 100%;
+           background: $primary-color;
+           top: 50%;
+           right: 4px;
+           transform: scaleX(0);
+           transform-origin: left;
+           transition: transform 300ms ease-in-out;
+        }
 
-    &::before {
-       z-index: 1;
-       content: "";
-       position: absolute;
-       height: 2px;
-       width: 100%;
-       background: $primary-color;
-       top: 50%;
-       right: 4px;
-       opacity: 0;
-       transform: scaleX(0);
-       transform-origin: left;
-       transition: transform 300ms ease-in-out;
-    }
-}
 
-li .line1 {
-    &::before {
-        height: 0;
-        width: 0;
-    }
-
-    &::after {
-        opacity: 1;
-    }
 
     }
 
-
-.line1 {
-    &::before {
-        height: 0;
+    #line1 {
+        &::before {
+            height: 0;
+            width: 0;
+        }
     }
 }
 
+.display {
+    .line {
+        &::after {
+           opacity: 1;
+        }
+    
+        &::before {
+           transform: scaleX(1);
+        }
+    }
+}
 
 
 .top {
@@ -156,7 +164,7 @@ li .line1 {
 }
 
 .bottom {
-    margin-top: 6rem;
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,5 +177,13 @@ li .line1 {
 
     svg {
         cursor: pointer;
+    }
+}
+
+.unclickable-arrow {
+    pointer-events: none;
+
+    path {
+        fill: $accent-color;
     }
 }

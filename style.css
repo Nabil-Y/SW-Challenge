@@ -3,8 +3,13 @@ body {
   background: #060447;
   color: #FFF38A;
   font-family: "Montserrat", sans-serif;
-  min-height: 100vh;
   padding: 150px 180px;
+}
+
+main {
+  max-height: 1024px;
+  max-width: 1440px;
+  margin: auto;
 }
 
 h2, h3, p {
@@ -64,7 +69,6 @@ li::before {
 li:first-child::before {
   height: 0;
 }
-
 li .line::after {
   z-index: 1;
   content: "";
@@ -76,6 +80,8 @@ li .line::after {
   right: 2px;
   top: 2px;
   opacity: 0;
+  transition: opacity;
+  transition-delay: 100ms;
 }
 li .line::before {
   z-index: 1;
@@ -86,22 +92,20 @@ li .line::before {
   background: #FFF38A;
   top: 50%;
   right: 4px;
-  opacity: 0;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 300ms ease-in-out;
 }
-
-li .line1::before {
+li #line1::before {
   height: 0;
   width: 0;
 }
-li .line1::after {
+
+.display .line::after {
   opacity: 1;
 }
-
-.line1::before {
-  height: 0;
+.display .line::before {
+  transform: scaleX(1);
 }
 
 .top {
@@ -135,7 +139,7 @@ li .line1::after {
 }
 
 .bottom {
-  margin-top: 6rem;
+  margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,6 +152,13 @@ li .line1::after {
 }
 .bottom-left svg {
   cursor: pointer;
+}
+
+.unclickable-arrow {
+  pointer-events: none;
+}
+.unclickable-arrow path {
+  fill: #827B68;
 }
 
 /*# sourceMappingURL=style.css.map */
