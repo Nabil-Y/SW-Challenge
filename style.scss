@@ -134,8 +134,12 @@ li {
 }
 
 
+
 .top {
     display: flex;
+}
+
+.left {
     position: relative;
 }
 
@@ -177,25 +181,23 @@ li {
     overflow: hidden;
 
     .image-blocks {
+        display: flex;
         position: relative;
         height: 600px;
-        left:0;
-
+        width: 1200px;
     }
 
     .film-image-block-1 {
-        position: absolute;
-        z-index: 1;
+        z-index: 3;
+        width: 400px;
     }
     .film-image-block-2 {
-        position: absolute;
-        z-index:2;
-        left: 100%;
+        z-index: 2;
+        width: 400px;
     }
     .film-image-block-3 {
-        position: absolute;
         z-index: 3;
-        left:200%;
+        width: 400px;
     }
 
 

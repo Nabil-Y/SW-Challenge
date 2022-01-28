@@ -112,6 +112,9 @@ li #line1::before {
 
 .top {
   display: flex;
+}
+
+.left {
   position: relative;
 }
 
@@ -149,23 +152,22 @@ li #line1::before {
   overflow: hidden;
 }
 .right .image-blocks {
+  display: flex;
   position: relative;
   height: 600px;
-  left: 0;
+  width: 1200px;
 }
 .right .film-image-block-1 {
-  position: absolute;
-  z-index: 1;
+  z-index: 3;
+  width: 400px;
 }
 .right .film-image-block-2 {
-  position: absolute;
   z-index: 2;
-  left: 100%;
+  width: 400px;
 }
 .right .film-image-block-3 {
-  position: absolute;
   z-index: 3;
-  left: 200%;
+  width: 400px;
 }
 .right img {
   width: 100%;
