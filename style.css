@@ -6,6 +6,7 @@ body {
   padding: 150px 180px;
   max-height: 1024px;
   max-width: 1440px;
+  margin: auto;
 }
 
 main {

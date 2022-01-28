@@ -1,7 +1,9 @@
 let active = 1;
 let incrementing = true;
+
 const arrows = document.querySelectorAll("svg");
 const movieImages = Array.from(document.getElementsByClassName("fib"));
+
 const blockOne = document.querySelector(".block1");
 const blockTwo = document.querySelector(".block2");
 const blockThree = document.querySelector(".block3");
